@@ -13,5 +13,7 @@
 
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', 'PostsController@index');
-Route::get('/posts/{id}', 'PostsController@show');
+Route::get('/posts', 'PostsController@index');
+//Route::get('/posts/{id}', 'PostsController@show');
+
+Route::get('/healths', 'HealthsController@index');

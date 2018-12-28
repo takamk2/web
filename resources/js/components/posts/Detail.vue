@@ -4,6 +4,10 @@
             <div class="card-body">
                 <h2 class="card-title">{{ post.title }}</h2>
                 <p class="card-text">{{ post.body }}</p>
+                <div class="card-group">
+                    <button class="btn">編集</button>
+                    <button class="btn" @click="deletePost">削除</button>
+                </div>
             </div>
         </div>
     </div>
@@ -14,12 +18,12 @@
         props: {
             id: Number,
         },
-        data () {
+        data() {
             return {
                 post: {},
             }
         },
-        mounted () {
+        mounted() {
             this.fetchDetail(this.id)
         },
         methods: {
@@ -34,10 +38,21 @@
                             that.post = response.data.post
                         })
                 }
-            }
+            },
+            deletePost() {
+                if (!confirm('削除しますか？')) return
+
+                const that = this
+                axios.get('/api/posts/delete/' + this.id)
+                    .then(response => {
+                        console.log(response.data.post)
+                        that.post = {}
+                        that.$emit('on-change', 'delete')
+                    })
+            },
         },
         watch: {
-            id () {
+            id() {
                 console.log('id changed')
                 this.fetchDetail(this.id)
             }
