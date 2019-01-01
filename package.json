@@ -26,6 +26,7 @@
     },
     "dependencies": {
         "bootstrap-vue": "^2.0.0-rc.11",
+        "moment": "^2.23.0",
         "stylus-loader": "^3.0.2",
         "vue-router": "^3.0.2"
     }

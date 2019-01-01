@@ -19,5 +19,12 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 Route::get('/posts', 'Api\PostsController@index');
 Route::post('/posts/create', 'Api\PostsController@store');
-Route::get('/posts/delete/{id}', 'Api\PostsController@destroy');
+Route::get('/posts/{id}/delete', 'Api\PostsController@destroy');
 Route::get('/posts/{id}', 'Api\PostsController@show');
+
+Route::get('/healths', 'Api\HealthsController@index');
+Route::post('/healths/create', 'Api\HealthsController@store');
+
+Route::get('/todos', 'Api\TodosController@index');
+Route::post('/todos/create', 'Api\TodosController@store');
+Route::get('/todos/{id}/complete', 'Api\TodosController@complete');

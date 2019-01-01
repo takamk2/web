@@ -17,3 +17,4 @@ Route::get('/posts', 'PostsController@index');
 //Route::get('/posts/{id}', 'PostsController@show');
 
 Route::get('/healths', 'HealthsController@index');
+Route::get('/todos', 'TodosController@index');

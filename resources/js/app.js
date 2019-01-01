@@ -22,6 +22,8 @@ window.Vue = require('vue');
 
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 Vue.component('posts-container', require('./components/posts/Container.vue').default);
+Vue.component('healths-container', require('./components/healths/Container.vue').default);
+Vue.component('todos-container', require('./components/todos/Container.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
