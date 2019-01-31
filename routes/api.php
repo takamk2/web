@@ -28,3 +28,6 @@ Route::post('/healths/create', 'Api\HealthsController@store');
 Route::get('/todos', 'Api\TodosController@index');
 Route::post('/todos/create', 'Api\TodosController@store');
 Route::get('/todos/{id}/complete', 'Api\TodosController@complete');
+
+Route::get('/locations', 'Api\LocationsController@index');
+Route::post('/locations/create', 'Api\LocationsController@store');

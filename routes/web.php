@@ -13,8 +13,11 @@
 
 use Illuminate\Support\Facades\Route;
 
+Route::get('/', 'HomeController@index');
+
 Route::get('/posts', 'PostsController@index');
 //Route::get('/posts/{id}', 'PostsController@show');
 
 Route::get('/healths', 'HealthsController@index');
 Route::get('/todos', 'TodosController@index');
+Route::get('/locations', 'LocationsController@index');
