@@ -4,15 +4,21 @@ namespace App\Http\Controllers\Api;
 
 use App\Location;
 use App\LocationCheckIn;
+use App\Repositories\LocationRepository;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Str;
-use phpDocumentor\Reflection\DocBlock\Tags\Var_;
 
 class LocationsController extends Controller
 {
+    private $locationRepository;
+
+    public function __construct(LocationRepository $locationRepository)
+    {
+        $this->locationRepository = $locationRepository;
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -20,6 +26,8 @@ class LocationsController extends Controller
      */
     public function index()
     {
+        $this->locationRepository->test();
+
         $locations = Location::query()->orderBy('created_at', 'desc')->get();
         return response()->json([
             'locations' => $locations,
