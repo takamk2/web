@@ -23,6 +23,8 @@ window.Vue = require('vue');
 
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 
+Vue.component('logic-puzzle', require('./components/LogicPuzzle.vue').default);
+
 Vue.component('dashboard-container', require('./components/dashboard/Container.vue').default);
 Vue.component('posts-container', require('./components/posts/Container.vue').default);
 Vue.component('healths-container', require('./components/healths/Container.vue').default);

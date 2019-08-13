@@ -3,5 +3,6 @@
 @section('title', 'Home')
 
 @section('content')
-    <dashboard-container/>
+    {{--<dashboard-container/>--}}
+    <logic-puzzle/>
 @endsection
